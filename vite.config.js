@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   // Base path untuk GitHub Pages
-  // Ganti 'web-bizmark-id' dengan nama repository Anda
-  base: '/web-bizmark-id/',
+  // Repository: https://github.com/tanerizawa/bizmark.git
+  base: '/bizmark/',
   
   build: {
     // Output directory
