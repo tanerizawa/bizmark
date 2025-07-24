@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  // Base path untuk GitHub Pages
-  // Repository: https://github.com/tanerizawa/bizmark.git
-  base: '/bizmark/',
+  // Base path - empty for custom domain, '/bizmark/' for GitHub Pages
+  base: '/',
   
   build: {
     // Output directory
