@@ -1,0 +1,332 @@
+/* ==========================================================================
+   BIZMARK.ID - Apple HIG Enhanced Design System
+   ========================================================================== */
+
+:root {
+  /* Colors - Enhanced iOS 17 Palette */
+  --hig-blue: #007AFF;  
+  --hig-green: #34C759;
+  --hig-indigo: #5856D6;
+  --hig-orange: #FF9500;
+  --hig-pink: #FF2D55;
+  --hig-purple: #AF52DE;
+  --hig-red: #FF3B30;
+  --hig-teal: #5AC8FA;
+  --hig-yellow: #FFCC00;
+  --hig-gray: #8E8E93;
+  --hig-gray2: #AEAEB2;
+  --hig-gray3: #C7C7CC;
+  --hig-gray4: #D1D1D6;
+  --hig-gray5: #E5E5EA;
+  --hig-gray6: #F2F2F7;
+  
+  /* Semantic Colors */
+  --hig-label: rgba(60, 60, 67, 0.9);
+  --hig-secondary-label: rgba(60, 60, 67, 0.6);
+  --hig-tertiary-label: rgba(60, 60, 67, 0.3);
+  --hig-quaternary-label: rgba(60, 60, 67, 0.16);
+  
+  /* Shadow Styles - Directly from Apple HIG */
+  --hig-shadow-small: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --hig-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --hig-shadow-large: 0 8px 16px rgba(0, 0, 0, 0.16);
+  --hig-shadow-extra-large: 0 20px 40px rgba(0, 0, 0, 0.2);
+  
+  /* Blur Effects */
+  --hig-blur-material: blur(30px) saturate(180%);
+  --hig-blur-thin-material: blur(20px) saturate(160%);
+  --hig-blur-ultra-thin-material: blur(10px) saturate(120%);
+  
+  /* Vibrancy - Background blur style for macOS/iOS */
+  --hig-vibrancy-background: rgba(255, 255, 255, 0.72);
+  
+  /* Corner Radius - From Apple HIG */
+  --hig-radius-xs: 6px;
+  --hig-radius-sm: 8px;  
+  --hig-radius-md: 10px; 
+  --hig-radius-lg: 14px;
+  --hig-radius-xl: 18px;
+  --hig-radius-circle: 50%;
+  
+  /* Common Control Sizes */
+  --hig-control-height-small: 28px;
+  --hig-control-height-regular: 36px;
+  --hig-control-height-large: 44px;
+  
+  /* HIG Layout Spacing */
+  --hig-spacing-2xs: 4px;
+  --hig-spacing-xs: 8px;
+  --hig-spacing-sm: 16px;
+  --hig-spacing-md: 20px;
+  --hig-spacing-lg: 32px;
+  --hig-spacing-xl: 48px;
+  --hig-spacing-2xl: 64px;
+  
+  /* HIG Animation Timings */
+  --hig-duration-fast: 0.2s;
+  --hig-duration-medium: 0.3s;
+  --hig-duration-slow: 0.5s;
+  
+  /* HIG Easing Curves */
+  --hig-ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+  --hig-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --hig-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --hig-ease-spring: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Advanced HIG Constants */
+  --hig-button-corner-radius: 8px;
+  --hig-nav-bar-height: 44px;
+  --hig-tab-bar-height: 49px;
+  --hig-status-bar-height: 20px;
+}
+
+/* Dark Mode Variables - iOS Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark Mode iOS Colors */
+    --hig-blue: #0A84FF;
+    --hig-green: #30D158;
+    --hig-indigo: #5E5CE6;
+    --hig-orange: #FF9F0A;
+    --hig-pink: #FF375F;
+    --hig-purple: #BF5AF2;
+    --hig-red: #FF453A;
+    --hig-teal: #64D2FF;
+    --hig-yellow: #FFD60A;
+    --hig-gray: #8E8E93;
+    --hig-gray2: #636366;
+    --hig-gray3: #48484A;
+    --hig-gray4: #3A3A3C;
+    --hig-gray5: #2C2C2E;
+    --hig-gray6: #1C1C1E;
+    
+    /* Semantic Colors - Dark Mode */
+    --hig-label: rgba(255, 255, 245, 0.9);
+    --hig-secondary-label: rgba(255, 255, 245, 0.6);
+    --hig-tertiary-label: rgba(255, 255, 245, 0.3);
+    --hig-quaternary-label: rgba(255, 255, 245, 0.16);
+    
+    /* Vibrancy - Dark Mode */
+    --hig-vibrancy-background: rgba(30, 30, 30, 0.75);
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: more) {
+  :root {
+    --hig-blue: #0040DD;
+    --hig-green: #248A3D;
+    --hig-indigo: #3634A3;
+    --hig-orange: #C93400;
+    --hig-pink: #D30F45;
+    --hig-purple: #8944AB;
+    --hig-red: #D70015;
+    --hig-teal: #0071A4;
+    --hig-yellow: #A05E03;
+    
+    /* Increased Contrast for Text */
+    --hig-label: rgb(0, 0, 0);
+    --hig-secondary-label: rgb(28, 28, 30);
+    --hig-tertiary-label: rgb(60, 60, 67);
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --hig-blue: #409CFF;
+      --hig-green: #30DB5B;
+      --hig-indigo: #7D7AFF;
+      --hig-orange: #FFB340;
+      --hig-pink: #FF6482;
+      --hig-purple: #DA8FFF;
+      --hig-red: #FF6961;
+      --hig-teal: #70D7FF;
+      --hig-yellow: #FFDB4C;
+      
+      /* Increased Contrast for Text on Dark */
+      --hig-label: rgb(255, 255, 255);
+      --hig-secondary-label: rgb(235, 235, 245);
+      --hig-tertiary-label: rgb(215, 215, 225);
+    }
+  }
+}
+
+/* Enhanced Retina Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Fine hairline borders for Retina displays */
+  .hairline-top {
+    position: relative;
+  }
+  
+  .hairline-top::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--hig-gray5);
+    transform: scaleY(0.5);
+  }
+  
+  .hairline-bottom {
+    position: relative;
+  }
+  
+  .hairline-bottom::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--hig-gray5);
+    transform: scaleY(0.5);
+  }
+  
+  /* Sharper image rendering */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* System Font Features Optimization */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/* Enhanced Button Styles */
+.btn-hig {
+  font-size: var(--font-size-15);
+  font-weight: 600;
+  min-height: var(--hig-control-height-regular);
+  padding: var(--hig-spacing-xs) var(--hig-spacing-md);
+  border-radius: var(--hig-button-corner-radius);
+  transition: all var(--hig-duration-medium) var(--hig-ease-out);
+}
+
+.btn-hig-pill {
+  border-radius: 999px;
+  padding-left: var(--hig-spacing-lg);
+  padding-right: var(--hig-spacing-lg);
+}
+
+/* HIG SF Symbol Icon Support */
+.sf-symbol {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "SF Pro Icons";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+}
+
+/* HIG Menu Styles */
+.menu-hig {
+  border-radius: var(--hig-radius-lg);
+  box-shadow: var(--hig-shadow-large);
+  background-color: var(--color-surface-elevated);
+  backdrop-filter: var(--hig-blur-thin-material);
+  -webkit-backdrop-filter: var(--hig-blur-thin-material);
+  padding: var(--hig-spacing-xs) 0;
+  min-width: 200px;
+}
+
+.menu-item-hig {
+  padding: var(--hig-spacing-xs) var(--hig-spacing-md);
+  display: flex;
+  align-items: center;
+  min-height: var(--hig-control-height-regular);
+  transition: background-color var(--hig-duration-fast) var(--hig-ease-out);
+}
+
+.menu-item-hig:hover {
+  background-color: var(--hig-gray6);
+}
+
+@media (prefers-color-scheme: dark) {
+  .menu-item-hig:hover {
+    background-color: var(--hig-gray5);
+  }
+}
+
+/* HIG Card Styles */
+.card-hig {
+  border-radius: var(--hig-radius-lg);
+  background-color: var(--color-surface);
+  padding: var(--hig-spacing-md);
+  box-shadow: var(--hig-shadow-small);
+  transition: transform var(--hig-duration-medium) var(--hig-ease-spring),
+              box-shadow var(--hig-duration-medium) var(--hig-ease-out);
+}
+
+.card-hig:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--hig-shadow-medium);
+}
+
+/* HIG Header Vibrancy */
+.header-hig {
+  background-color: var(--hig-vibrancy-background);
+  backdrop-filter: var(--hig-blur-material);
+  -webkit-backdrop-filter: var(--hig-blur-material);
+  border-bottom: none;
+}
+
+.header-hig::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--hig-gray5);
+  transform: scaleY(0.5);
+}
+
+/* HIG Animation Classes */
+@keyframes hig-bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  60% { transform: translateY(-10px); }
+}
+
+.hig-animate-bounce {
+  animation: hig-bounce 1s ease;
+}
+
+@keyframes hig-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hig-animate-fade-in {
+  animation: hig-fade-in var(--hig-duration-medium) var(--hig-ease-out);
+}
+
+@keyframes hig-slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.hig-animate-slide-up {
+  animation: hig-slide-up var(--hig-duration-medium) var(--hig-ease-out);
+}
+
+/* HIG Mobile Optimizations */
+@media (max-width: 768px) {
+  :root {
+    /* Slightly adjusted sizing for mobile */
+    --hig-radius-lg: 12px;
+    --hig-spacing-lg: 24px;
+  }
+  
+  .card-hig {
+    padding: var(--hig-spacing-sm);
+  }
+  
+  .btn-hig {
+    min-height: var(--hig-control-height-large);
+    padding: var(--hig-spacing-sm) var(--hig-spacing-md);
+  }
+}
