@@ -24,7 +24,7 @@ Repository telah diinisialisasi ulang dengan history yang bersih!
 ### Step 2: Connect Local ke GitHub
 ```bash
 # Add remote origin
-git remote add origin https://github.com/USERNAME/REPOSITORY-NAME.git
+git remote add origin https://github.com/tanerizawa/bizmark.git
 
 # Push ke GitHub
 git push -u origin main
@@ -33,7 +33,7 @@ git push -u origin main
 ### Step 3: Update Vite Config
 Edit `vite.config.js` line 5:
 ```javascript
-base: '/REPOSITORY-NAME/',
+base: '/bizmark/',
 ```
 
 ### Step 4: Enable GitHub Pages
