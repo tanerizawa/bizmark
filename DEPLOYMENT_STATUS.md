@@ -3,19 +3,17 @@
 ## 🎯 **Website URL**
 - **Live Website**: https://tanerizawa.github.io/bizmark/
 
-## ⚠️ **Custom Domain Fix - DNS OK, SSL Issue**
-- DNS configuration SUDAH BENAR ✅
-- `www.bizmark.id` → `tanerizawa.github.io` (working)
-- **Issue**: SSL certificate belum di-generate oleh GitHub
-- **Solution**: Reset custom domain untuk trigger SSL generation
+## ⚠️ **Custom Domain Issue - Apex/WWW Conflict**
+- DNS configuration bekerja, tapi GitHub internal validation gagal
+- **Root Cause**: Konflik antara apex domain (`bizmark.id`) dan www (`www.bizmark.id`)
+- **Solution**: Gunakan HANYA `www.bizmark.id`, hapus A records untuk apex domain
 
-### 🔧 **Quick Fix Steps (5-10 menit):**
-1. Go to: https://github.com/tanerizawa/bizmark/settings/pages
-2. **CLEAR** custom domain field (hapus `www.bizmark.id`)
-3. Click **Save** → wait 2 minutes
-4. **RE-ENTER** `www.bizmark.id` 
-5. Click **Save** → wait 10 minutes for SSL
-6. **Enable** "Enforce HTTPS"
+### 🔧 **Root Cause Fix (DNS Provider - Rumahweb):**
+1. **Login ke DNS management** (Rumahweb panel)
+2. **HAPUS A records** untuk `bizmark.id` (apex domain)
+3. **KEEP ONLY**: `www.bizmark.id CNAME tanerizawa.github.io`
+4. **GitHub Pages**: Set custom domain ke `www.bizmark.id` ONLY
+5. **Wait**: 20-45 menit untuk complete propagation
 
 ## ✅ **Repository Status**
 - ✅ **Repository**: https://github.com/tanerizawa/bizmark.git
@@ -33,14 +31,15 @@
 3. **GitHub Pages**: Live ✓
 4. **Clean Git History**: Maintained ✓
 
-### ✅ **DNS Configuration:**
-1. **DNS Records**: SUDAH BENAR ✓
-2. **SSL Certificate**: Perlu di-regenerate oleh GitHub
-3. **Action Required**: Reset custom domain untuk trigger SSL generation
+### ✅ **DNS Analysis:**
+1. **HTTP Access**: Working ✓ (curl test passed)
+2. **DNS Resolution**: Working ✓ (nslookup OK)
+3. **GitHub Internal**: FAILED ❌ (validation conflict)
+4. **Root Cause**: Apex domain (bizmark.id) + www conflict
 
-### 🚨 **IMMEDIATE ACTION (Simple Fix):**
-**File created**: `CUSTOM_DOMAIN_FIX.md` - detailed step-by-step guide
-**Quick URL**: https://github.com/tanerizawa/bizmark/settings/pages
+### 🚨 **CRITICAL FIX REQUIRED:**
+**File created**: `DOMAIN_TROUBLESHOOTING.md` - complete technical analysis
+**DNS Provider**: Login ke Rumahweb panel untuk fix A records
 
 ### 📱 **WhatsApp Integration Active:**
 - Business number: 6283879602855
@@ -49,18 +48,19 @@
 
 ---
 
-## 🎯 **Custom Domain akan LIVE dalam 10-15 menit!**
-**DNS sudah benar, hanya perlu SSL certificate regeneration**
+## 🎯 **Custom Domain Fix - Technical Solution**
+**Problem**: GitHub Pages tidak dapat validate domain karena apex/www conflict
 
-### **Simple 3-Step Fix:**
-1. **Visit**: https://github.com/tanerizawa/bizmark/settings/pages
-2. **Clear & Re-enter** custom domain field
-3. **Wait 10-15 minutes** untuk SSL generation
+### **DNS Provider Fix (Rumahweb Panel):**
+1. **Login**: https://rumahweb.com (DNS management)
+2. **DELETE A records**: Remove all `bizmark.id` A records
+3. **KEEP CNAME**: `www.bizmark.id` → `tanerizawa.github.io`
+4. **GitHub**: Set custom domain to `www.bizmark.id` only
 
 ### **Expected Result:**
-✅ https://www.bizmark.id akan accessible dengan SSL
-✅ All WhatsApp CTAs akan berfungsi normal
-✅ Website fully functional dengan custom domain
+✅ https://www.bizmark.id akan working (20-45 menit)
+✅ All WhatsApp CTAs berfungsi normal
+✅ Professional custom domain active
 
 ### 🔧 **Next Steps After SSL Fix:**
 Setelah custom domain working:
